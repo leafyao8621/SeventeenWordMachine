@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang = "ja">
+    <head>
+        <title>十七語機</title>
+        <link rel="stylesheet" type = "text/css" href="emulator.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src = "emulator.js"></script>
+    </head>
+    <body>
+        <div class = "emulator">
+            <div class = "reg">
+                <table id = "reg">
+                    <tbody>
+                        <tr>
+                            <th class = "vertval"><span>質</span></th>
+                            <th class = "vertval"><span>陸</span></th>
+                            <th class = "vertval"><span>伍</span></th>
+                            <th class = "vertval"><span>肆</span></th>
+                            <th class = "vertval"><span>参</span></th>
+                            <th class = "vertval"><span>弐</span></th>
+                            <th class = "vertval"><span>壱</span></th>
+                            <th class = "vertval"><span>零</span></th>
+                            <th class = "vertval"><span>記憶回路</span></th>
+                        </tr>
+                        <tr>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class = "memAddr">
+                <table id = "memAddr">
+                    <tbody>
+                        <tr><th class = "vertval"><span>宛先</span></th></tr>
+                        <tr><td class = "vertchar"><span>参</span></td></tr>
+                        <tr><td class = "vertchar"><span>零</span></td></tr>
+                        <tr><td class = "vertchar"><span>零</span></td></tr>
+                        <tr><td class = "vertchar"><span>零</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class = "memControl">
+                <table>
+                    <tr>
+                        <td><input class = "keypad" type = "button" value = "&#8678;" onclick = "memViewLeft()"></td>
+                        <td><input class = "keypad" type = "button" value = "&#8680;" onclick = "memViewRight()"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class = "mem">
+                <table id = "mem">
+                    <tbody>
+                        <tr>
+                            <th class = "vertval"><span>参零零質</span></th>
+                            <th class = "vertval"><span>参零零陸</span></th>
+                            <th class = "vertval"><span>参零零伍</span></th>
+                            <th class = "vertval"><span>参零零肆</span></th>
+                            <th class = "vertval"><span>参零零参</span></th>
+                            <th class = "vertval"><span>参零零弐</span></th>
+                            <th class = "vertval"><span>参零零壱</span></th>
+                            <th class = "vertval"><span>参零零零</span></th>
+                            <th class = "vertval"><span>記憶装置</span></th>
+                        </tr>
+                        <tr>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                            <td class = "vertval"><span>零零零零</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class = "memAddrControl">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><input class = "keypad" type = "button" value = "&#8679;" onclick = "memAddrUp()"></td>
+                            <td><input class = "keypad" type = "button" value = "丙" onclick = "setMemAddr(0xc)"></td>
+                            <td><input class = "keypad" type = "button" value = "捌" onclick = "setMemAddr(8)"></td>
+                            <td><input class = "keypad" type = "button" value = "肆" onclick = "setMemAddr(4)"></td>
+                            <td><input class = "keypad" type = "button" value = "零" onclick = "setMemAddr(0)"></td>
+                        </tr>
+                        <tr>
+                            <td><input class = "keypad" type = "button" value = "&#8681;" onclick = "memAddrDown()"></td>
+                            <td><input class = "keypad" type = "button" value = "丁" onclick = "setMemAddr(0xd)"></td>
+                            <td><input class = "keypad" type = "button" value = "玖" onclick = "setMemAddr(9)"></td>
+                            <td><input class = "keypad" type = "button" value = "伍" onclick = "setMemAddr(5)"></td>
+                            <td><input class = "keypad" type = "button" value = "壱" onclick = "setMemAddr(1)"></td>
+                        </tr>
+                        <tr>
+                            <td><input class = "keypad" type = "button" value = "&#9003;" onclick = "memAddrClear()"></td>
+                            <td><input class = "keypad" type = "button" value = "戊" onclick = "setMemAddr(0xe)"></td>
+                            <td><input class = "keypad" type = "button" value = "甲" onclick = "setMemAddr(0xa)"></td>
+                            <td><input class = "keypad" type = "button" value = "陸" onclick = "setMemAddr(6)"></td>
+                            <td><input class = "keypad" type = "button" value = "弐" onclick = "setMemAddr(2)"></td>
+                        </tr>
+                        <tr>
+                            <td><input class = "keypad" type = "button" value = "&#9166;" onclick = "memAddrEnter()"></td>
+                            <td><input class = "keypad" type = "button" value = "己" onclick = "setMemAddr(0xf)"></td>
+                            <td><input class = "keypad" type = "button" value = "乙" onclick = "setMemAddr(0xb)"></td>
+                            <td><input class = "keypad" type = "button" value = "質" onclick = "setMemAddr(7)"></td>
+                            <td><input class = "keypad" type = "button" value = "参" onclick = "setMemAddr(3)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class = "control">
+                <table>
+                    <tr><td><input class = "keypad" type = "button" value = "再" onclick = "reload()"></td></tr>
+                    <tr><td><input class = "keypad" type = "button" value = "一" onclick = "stepBtn()"></td></tr>
+                    <tr><td><input class = "keypad" type = "button" value = "全" onclick = "runBtn()"></td></tr>
+                    <tr><td><input class = "keypad" type = "button" value = "停" onclick = "stopBtn()"></td></tr>
+                </table>
+            </div>
+            <div class = "fio">
+                <div class = "file"><input type = "file" id = "file"></div>
+                <table class = "fiocontrol">
+                    <tr><td><input class = "keypad" type = "button" value = "入" onclick = "uploadBtn()"></td></tr>
+                    <tr><td><input class = "keypad" type = "button" value = "出" onclick = "downloadBtn()"></td></tr>
+                </table>
+            </div>
+            <div class = "cur-container">
+                <div class = "cur-item1">
+                    <p id = "cur" class = "vertarea"></p>
+                </div>
+                <div class = "cur-item3">
+                    <p id = "curasm"></p>
+                </div>
+                <div class = "cur-item2">
+                    <strong><p class = "vertarea">命令</p></strong>
+                </div>
+            </div>
+            <div class = "out-container">
+                <div class = "out-item1"><p id = "out" class = "vertarea"></p></div>
+                <div class = "out-item2"><strong><p class = "vertarea">出力</p></strong></div>
+            </div>
+        </div>
+    </body>
+</html>

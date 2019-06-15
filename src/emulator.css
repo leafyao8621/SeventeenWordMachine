@@ -1,0 +1,136 @@
+table {
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px black solid;
+}
+.vertval span, .vertval {
+    height: 70px;
+    width: 20px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+}
+
+.vertchar span, .vertchar {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+}
+
+.keypad {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.keypad:hover {
+    background-color: red;
+}
+
+.vertarea {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.out-container {
+    display: inline-grid;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.out-item1 {
+    grid-column-start: 1;
+    height: 300px;
+    width: 300px;
+    border: 1px black solid;
+    overflow: scroll;
+}
+
+.out-item2 {
+    grid-column-start: 2;
+    height: 50px;
+}
+
+.emulator {
+    display: inline-grid;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+
+.reg {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.memAddr {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.mem {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.memAddrControl {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.control {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.cur-container {
+    display: inline-grid;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    
+}
+
+.cur-item1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    height: 300px;
+    width: 300px;
+    border: 1px black solid;
+}
+
+.cur-item2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    height: 50px;
+}
+
+.cur-item3 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    height: 20px;
+}
+
+.memControl {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.fio {
+    display: inline-grid;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.file {
+    grid-column-start: 1;
+}
+
+.fiocontrol {
+    grid-column-start: 2;
+}
